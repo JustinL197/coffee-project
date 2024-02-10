@@ -1,0 +1,12 @@
+/*
+This should correspond to the styles you will use throughout the entire site, that are not specific to a page.
+*/
+
+body {
+    font-family: 'Open Sans';
+    font-weight: 400;
+}
+
+button{
+    cursor: pointer;
+}
