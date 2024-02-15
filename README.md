@@ -1,2 +1,3 @@
-# self-projects
-self-directed projects for various purposes (leisure-coding, course assignments, etc)
+# Coffee-sprint
+Coffee sprint assignmnet.
+Creating a page for a cafe, includes home page and the menu page. 
