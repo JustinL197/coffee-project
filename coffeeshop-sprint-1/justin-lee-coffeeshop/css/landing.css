@@ -28,8 +28,9 @@ header{
 
 /* Styles for the main navigation in the header */
 
-.main-nav, .main-nav__heading, .main-nav__list{
-    display: inline-block;
+.main-nav{
+    display: flex;
+    align-items: flex-end;
 }
 
 h2.main-nav__heading{
@@ -38,6 +39,10 @@ h2.main-nav__heading{
     font-size: 3.125rem;
     font-weight: 300;
     text-align: center;
+}
+
+.main-nav__list{
+    margin-left:auto;
 }
 
 .main-nav__list li{
@@ -94,7 +99,7 @@ h2.main-nav__heading{
 }
 
 .main-container__image{
-    padding-top:1.875rem;
+    padding-top:3rem;
     padding-bottom: 5rem;
 }
 
@@ -132,7 +137,7 @@ section.product{
     width:20.625rem;
     height:27.5rem;
     padding: 0.625rem 0.625rem 1.0.625rem 0.625rem;
-    border-radius: 0.625rem;
+    border-radius: 1rem;
     margin: 1.25rem 0 1.25rem 0;
     box-shadow: 0 0.313rem 0.563rem -0.0625rem rgba(0, 0, 0, 0.25);
     align-items: center;
@@ -150,8 +155,9 @@ section.product{
 .product__title-container{
     display:flex;
     flex-wrap: wrap;
-    border-bottom-left-radius: 0.625rem;
-    border-bottom-right-radius: 0.625rem;
+    padding-bottom: 1.25rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     height:100%;
     width: 100%;
     background-color: #fff0ed;
@@ -177,6 +183,8 @@ section.product{
 .product__size{
     padding-left: 1px;
     margin-top: 0px;
+    color:#393939;
+    font-weight:300;
 }
 
 /* Styles for the "View All" section */
@@ -198,6 +206,61 @@ section.product{
     font-weight:400;
     color:white;
 }
+/* Styles for the special product section */
+
+.special-product{
+    display:flex;
+    justify-content: space-between;
+}
+
+.special-product__title{
+    margin-top: 3.75rem;
+    margin-bottom:0;
+    color:#393939;
+    font-size: 3.75rem;
+    font-weight: 300;
+}
+
+.special-product__container{
+    display: flex;
+    flex-direction: column;
+    width:33%;
+    margin-left:6.25rem;
+}
+.special-product__image-container{
+    margin-top: 3.75rem;
+    margin-right:6.25rem;
+    background-image: url(../assets/coldbrewbackground.png);
+    background-size: cover;
+}
+.special-product__image{
+    height:17.5rem;
+    width:10rem;
+    margin-top:3.75rem;
+    margin-right:6.25rem;
+    margin-left:6.25rem;
+    margin-bottom:3.75rem;
+
+}
+.special-product__logos{
+    display:flex;
+    justify-content: flex-start;
+}
+.special-product__icon{
+    width:3.125rem;
+    padding-right:150px;
+}
+
+.learn-more_button{
+    width:13rem;
+    padding:1rem 2.1rem;
+    border: none;
+    margin-top: 1.875rem;
+    background-color: #5BACC3;
+    font-size: 1.313rem;
+    font-weight:400;
+    color:white;
+}
 
 /* Styles for the shop banner  */
 
@@ -209,30 +272,21 @@ section.product{
     width: 90%; 
     background-color: #393939;
     padding: 1.875rem 0 1.875rem 0;
-    margin: 12.5rem auto; 
+    margin: 9.375rem auto; 
     color: white;
     font-size: 2.813rem;
     font-weight: 400;
     text-align: center;
 }
 
-/* Styles for the footer section */
-
-footer{
-    background-color: #fff0ed;
-    display:flex;
-    padding: 3.75rem 3.75rem;
-}
-
 /* Styles for the address, hours, and social information */
 
-.address{
-    margin-left: 6.25rem;
-    margin-right: 6.25rem;
-}
-
-.hours{
-    margin-right: 6.25rem;
+.footer-container{
+    padding-top:3.125rem;
+    padding-bottom:3.125rem;
+    display:flex;
+    justify-content: space-around;
+    background-color: #fff0ed;
 }
 
 .address__title, .hours__title, .social__title{

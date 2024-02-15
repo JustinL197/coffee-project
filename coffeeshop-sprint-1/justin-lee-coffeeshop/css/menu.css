@@ -31,9 +31,9 @@ header{
 
 /* Styles for the main navigation in header */
 
-header, .main-nav, .main-nav__heading, .main-nav__list{
-    display: inline-block;
-    margin: 0%;
+.main-nav{
+    display: flex;
+    align-items: flex-end;
 }
 
 h2.main-nav__heading{
@@ -44,16 +44,19 @@ h2.main-nav__heading{
     text-align: center;
 }
 
+.main-nav__list{
+    margin-left:auto;
+}
+
 .main-nav__list li{
     display:inline;
-    font-size:1.313rem;
     padding-right: 2.25rem;
+    font-size:1.313rem;
 }
 
 .main-nav__list-item{
     color:#5BACC3
 }
-
 /* Styles for the main container section */
 
 div.main-container{
@@ -64,18 +67,22 @@ div.main-container{
     background-position: center;
     background-size: cover;
     justify-content: center;
+    align-items: center;
 }
 
 div.main-container__menu-box{
-    box-sizing: border-box;
-    text-align: center;
+    display:flex;
+    padding: 1.25rem;
     background-color: #393939;
-    width: 18.75rem;
-    height: 12.5rem;
+    width: 15rem;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
 
 }
 
 h1{
+    text-align: center;
     font-size: 3.75rem;
     font-weight: 300;
     color: #fff;
