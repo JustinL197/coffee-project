@@ -111,7 +111,7 @@ section.product{
 
 .product__section-title{
     width:100%;
-    margin-bottom: 3.125rem;
+    margin-bottom: 1.25rem;
     color:#393939;
     font-size: 3.75rem;
     font-weight: 300;
@@ -119,9 +119,11 @@ section.product{
 }
 
 .product__title{
+    padding-left:0.0625rem;
     margin-bottom: 0;
     font-size: 2.063rem;
-    font-weight: 300;
+    color:#393939;
+    font-weight:200;
 }
 
 .product__card{
@@ -129,10 +131,10 @@ section.product{
     flex-direction: column;
     width:20.625rem;
     height:27.5rem;
-    padding: 1.25rem 0 1.25rem 0;
+    padding: 0.625rem 0.625rem 1.0.625rem 0.625rem;
     border-radius: 0.625rem;
     margin: 1.25rem 0 1.25rem 0;
-    box-shadow: 0 0.313rem 0.563rem -0.063rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.313rem 0.563rem -0.0625rem rgba(0, 0, 0, 0.25);
     align-items: center;
     justify-content: center;
     background-color: white;
@@ -140,22 +142,50 @@ section.product{
 
 .product__item-image{
     height: 15rem;
+    padding-bottom: 40px;
+    padding-top: 30px;
     flex-shrink: 0;
 }
 
+.product__title-container{
+    display:flex;
+    flex-wrap: wrap;
+    border-bottom-left-radius: 0.625rem;
+    border-bottom-right-radius: 0.625rem;
+    height:100%;
+    width: 100%;
+    background-color: #fff0ed;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product__sub-container{
+    padding-left:0.938rem;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
 .product__item-price{
+    padding-right: 1.25rem;
+    margin-top:0;
+    margin-bottom: 0;
     font-size: 2.063rem;
     color: #5bacc3;
-    margin-bottom: 0;
+}
+
+.product__size{
+    padding-left: 1px;
+    margin-top: 0px;
 }
 
 /* Styles for the "View All" section */
 
 .view-all{
-    background-color: #f7f7f7;
-    text-align: center;
     padding-bottom:3.75rem;
     margin-bottom:3.75rem;
+    background-color: #f7f7f7;
+    text-align: center;
 }
 
 .view-all__button{
