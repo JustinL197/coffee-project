@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="./css/global.css" rel="stylesheet">
-    <link href="./css/landing.css" rel="stylesheet">
+    <link href="./scss/landing.css" rel="stylesheet">
     <title>Coffee Shop - Home</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <nav class="main-nav">
             <a href="./index.html">
                 <img src ="assets/coffee-beans-logo-and-footer.svg" alt="coffe bean logo">
             </a>
-            <h2 class="main-nav__heading">nitro</h2>
+            <a href="./index.html">
+                <h2 class="main-nav__heading">nitro</h2>
+            </a>
             <ul class="main-nav__list">
                 <li><a href="./index.html">ABOUT</a></li>
                 <li><a href="./pages/menu.html">MENU</a></li>
@@ -36,38 +37,38 @@
         </div>
 
         <section class="product">
-            <h2 class="product__section-title">Our Products</h2>
+            <h2 class="product__title">Our Products</h2>
             <!--Coffee Beans Card-->
             <article class="product__card">
-                <img class="product__item-image" src="assets/coffeebeans.png" alt="coffee beans">
-                <div class="product__title-container">
-                    <div class="product__sub-container">
-                        <h3 class="product__title">Coffee Beans</h3>
-                        <p class="product__size">Pack of 3</p>
+                <img class="product-card__image" src="assets/coffeebeans.png" alt="coffee beans">
+                <div class="product-card__content">
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">Coffee Beans</h3>
+                        <p class="product-card__size">Pack of 3</p>
                     </div>
-                    <p class="product__item-price">$19</p>
+                    <p class="product-card__price">$19</p>
                 </div>
             </article>
             <!--Cold Brew Card-->
             <article class="product__card">
-                <img class="product__item-image" src="assets/coldbrew.png" alt="cold brew">
-                <div class="product__title-container">
-                    <div class="product__sub-container">
-                        <h3 class="product__title">Cold Brew</h3>
-                        <p class="product__size">1 can</p>
+                <img class="product-card__image" src="assets/coldbrew.png" alt="cold brew">
+                <div class="product-card__content">
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">Cold Brew</h3>
+                        <p class="product-card__size">1 can</p>
                     </div>
-                    <p class="product__item-price">$5</p>
+                    <p class="product-card__price">$5</p>
                 </div>
             </article>
             <!--In-house brew-->
             <article class="product__card">
-                <img class="product__item-image" src="assets/inhousebrew.png" alt="in-house brew">
-                <div class="product__title-container">
-                    <div class="product__sub-container">
-                        <h3 class="product__title">In-house Brew</h3>
-                        <p class="product__size">1 cup</p>
+                <img class="product-card__image" src="assets/inhousebrew.png" alt="in-house brew">
+                <div class="product-card__content">
+                    <div class="product-card__info">
+                        <h3 class="product-card__title">In-house Brew</h3>
+                        <p class="product-card__size">1 cup</p>
                     </div>
-                    <p class="product__item-price">$3</p>
+                    <p class="product-card__price">$3</p>
                 </div>
             </article>
         </section>
@@ -88,7 +89,7 @@
                     <img class="special-product__icon" src="./assets/coffee-cup.svg" alt="coffee-cup">
                 </div>
                 <a href="./pages/menu.html">
-                    <button class="learn-more_button">LEARN MORE</button>
+                    <button class="learn-more__button">LEARN MORE</button>
                 </a>
             </div>
             <div class="special-product__image-container">
@@ -103,6 +104,8 @@
     </main>
 
     <footer class="footer-container">
+        <img src="./assets/coffee-beans-logo-and-footer.svg" class="footer-container__logo-left">
+        <img src="./assets/coffee-beans-logo-and-footer.svg" class="footer-container__logo-right">
         <div class="address">
             <h3 class="address__title">Address</h3>
             <p class="address__info">503 Broadway Penthouse <br> New York</p>
