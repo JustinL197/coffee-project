@@ -1,0 +1,150 @@
+@use '../scss/partials/global' as *;
+
+/* Variables for colors, font weight, and background colors */
+
+$color-primary: #5BACC3;
+$color-secondary: #393939;
+$color-background: #fff0ed;
+$color-text: black;
+$color-white: #fff;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+
+/* Styles for hyperlinks */
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+/* Styles for the logo  */
+
+.logo{
+    width: 3.125rem;
+}
+
+/* Styles for the main container section */
+
+.main-container{
+    display:flex;
+    height: 43.75rem;
+    width:100%;
+    background-image: url("../assets/coffee-circle.jpg");
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+
+
+    &__menu-box{
+        position: relative;
+        display:flex;
+        padding: 1.25rem 1.25rem 1.563rem 1.25rem;
+        background-color: $color-secondary;
+        width: 15rem;
+        height: 10rem;
+        justify-content: center;
+        align-items: center;
+    
+
+        &::before{
+            content:'';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            bottom: 15px;
+            right: 15px;
+            border: 5px solid $color-primary;
+        }
+    }       
+    &__title{
+        text-align: center;
+        font-size: 3.75rem;
+        font-weight: $font-weight-light;
+        color: #fff;
+        margin:0%;
+    
+    }
+}
+
+/* Styles for the sub-navigation section */
+
+.sub-nav{
+    width:100%;
+    background-color: $color-secondary;
+
+
+    &, &__list li{
+        display:inline-block;
+        text-align: center;
+    }
+
+    &__item{
+        color:white;
+        font-size:1.313rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        border-width: 0 0 0 4px;
+        border-color:$color-primary;
+        border-style: solid;
+    }
+}
+
+/* Styles for the menu items */
+
+.menu-item{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+    &__header{
+        color:$color-secondary;
+        font-size: 3.75rem;
+        font-weight: $font-weight-light;
+        margin: 1.875rem 0 0 0;
+    }
+
+    &__name{
+        color: $color-secondary;
+        font-size: 2.063rem;
+        font-weight: $font-weight-light;
+        text-align: center;
+        margin: 1.875rem 0 0 0;
+    }
+
+    &__description{
+        color:$color-secondary;
+        font-size: 1.125rem;
+        font-weight: $font-weight-normal;
+        font-style: italic;
+        text-align: center;
+        width: 31.25rem;
+        margin: 1rem 0 0 0;
+    }
+
+    &__price{
+        font-size: 1.125rem;
+        font-weight: $font-weight-normal;
+        text-align: center;
+        color:$color-primary;
+        margin: 0.5rem 0 0 0;
+    }
+
+    &__price--last-item{
+        margin:0.5rem 0 2.5rem 0;
+    }
+}
+
+/* Styles for different menu sections */
+
+#hot-drinks, #pastries{
+    background-color: $color-background;
+}
+
+#cold-drinks{
+    background-color: #F7F7F7;
+}
