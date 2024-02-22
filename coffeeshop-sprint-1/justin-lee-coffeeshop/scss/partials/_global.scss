@@ -7,10 +7,6 @@ body {
     margin:0%;
 }
 
-button{
-    cursor: pointer;
-}
-
 /* Styles for the main navigation in the header */
 
 .header{
@@ -26,26 +22,26 @@ button{
 .main-nav{
     display: flex;
     align-items: flex-end;
-}
 
-h2.main-nav__heading{
-    margin:0%;
-    color: #393939;
-    font-size: 3.125rem;
-    font-weight: 300;
-    text-align: center;
-}
+    &__heading{
+        margin:0%;
+        color: #393939;
+        font-size: 3.125rem;
+        font-weight: 300;
+        text-align: center;
+    }
 
-.main-nav__list{
-    margin-left:auto;
-}
+    &__list{
+        margin-left:auto;
+    }
 
-.main-nav__list li{
-    display:inline;
-    padding-right: 2.25rem;
-    font-size:1.313rem;
-}
+    &__list li{
+        display:inline;
+        padding-right: 2.25rem;
+        font-size:1.313rem;
+    }
 
-.main-nav__list-item{
-    color:#5BACC3
+    &__list-item{
+        color:#5BACC3
+    }
 }

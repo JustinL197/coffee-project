@@ -6,10 +6,6 @@ body {
   margin: 0%;
 }
 
-button {
-  cursor: pointer;
-}
-
 /* Styles for the main navigation in the header */
 .header {
   width: 100%;
@@ -25,30 +21,26 @@ button {
   display: flex;
   align-items: flex-end;
 }
-
-h2.main-nav__heading {
+.main-nav__heading {
   margin: 0%;
   color: #393939;
   font-size: 3.125rem;
   font-weight: 300;
   text-align: center;
 }
-
 .main-nav__list {
   margin-left: auto;
 }
-
 .main-nav__list li {
   display: inline;
   padding-right: 2.25rem;
   font-size: 1.313rem;
 }
-
 .main-nav__list-item {
   color: #5BACC3;
 }
 
-/* variables for colors, font weight, and background colors */
+/* Variables for colors, font weight, and background colors */
 /* Styles for hyperlinks */
 a {
   text-decoration: none;
@@ -107,7 +99,7 @@ a {
   display: inline-block;
   text-align: center;
 }
-.sub-nav__list-item {
+.sub-nav__item {
   color: white;
   font-size: 1.313rem;
   padding-left: 1.25rem;

@@ -6,10 +6,6 @@ body {
   margin: 0%;
 }
 
-button {
-  cursor: pointer;
-}
-
 /* Styles for the main navigation in the header */
 .header {
   width: 100%;
@@ -25,30 +21,26 @@ button {
   display: flex;
   align-items: flex-end;
 }
-
-h2.main-nav__heading {
+.main-nav__heading {
   margin: 0%;
   color: #393939;
   font-size: 3.125rem;
   font-weight: 300;
   text-align: center;
 }
-
 .main-nav__list {
   margin-left: auto;
 }
-
 .main-nav__list li {
   display: inline;
   padding-right: 2.25rem;
   font-size: 1.313rem;
 }
-
 .main-nav__list-item {
   color: #5BACC3;
 }
 
-/* This should correspond to the styles specifically for the Landing Page. */
+/* Variables for colors, font weight, and background colors */
 /* Styles for hyperlinks */
 a {
   text-decoration: none;
@@ -83,10 +75,11 @@ a {
   margin: 0 0 2.5rem 10rem;
 }
 .main-container__button {
+  text-align: center;
   display: inline-block;
   position: relative;
   width: 11.25rem;
-  padding: 0.938rem 2.1rem 1.25rem 2.1rem;
+  padding: 0.938rem 0 1.25rem 0;
   border: none;
   background-color: #5BACC3;
   font-size: 1.313rem;
@@ -103,6 +96,12 @@ a {
   right: 5px;
   border: 2px solid #393939;
 }
+.main-container__button:active::before {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 .main-container__image {
   padding-top: 3rem;
   padding-bottom: 5rem;
@@ -112,6 +111,7 @@ a {
 /* Styles for the product section */
 .product {
   display: flex;
+  padding-bottom: 3.125rem;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
@@ -125,7 +125,8 @@ a {
   font-weight: 300;
   text-align: center;
 }
-.product__card {
+
+.product-card {
   display: flex;
   flex-direction: column;
   width: 20.625rem;
@@ -138,13 +139,14 @@ a {
   justify-content: center;
   background-color: white;
 }
-.product .product-card__image {
+.product-card__image {
   height: 15rem;
-  padding-bottom: 40px;
-  padding-top: 30px;
+  padding-bottom: 2.5rem;
+  padding-top: 1.875rem;
   flex-shrink: 0;
 }
-.product .product-card__content {
+
+.product-content {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 1.25rem;
@@ -156,34 +158,35 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.product .product-card__info {
-  padding-left: 0.938rem;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-}
-.product .product-card__title {
-  padding-left: 0.0625rem;
-  margin-bottom: 0;
-  font-size: 2.063rem;
-  color: #393939;
-  font-weight: 200;
-}
-.product .product-card__price {
+.product-content__price {
   padding-right: 1.25rem;
   margin-top: 0;
   margin-bottom: 0;
   font-size: 2.063rem;
   color: #5BACC3;
 }
-.product .product-card__size {
+
+.product-info {
+  padding-left: 0.938rem;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.product-info__title {
+  padding-left: 0.0625rem;
+  margin-bottom: 0;
+  font-size: 2.063rem;
+  color: #393939;
+  font-weight: 200;
+}
+.product-info__quantity {
   padding-left: 1px;
   margin-top: 0px;
   color: #393939;
   font-weight: 300;
 }
 
-/* Styles for the "View All" section */
+/* Styles for the "View All" button */
 .view-all {
   padding-bottom: 3.75rem;
   margin-bottom: 3.75rem;
@@ -192,8 +195,7 @@ a {
 }
 .view-all__button {
   position: relative;
-  width: 11.25rem;
-  padding: 1rem 2.1rem 1.25rem 2.1rem;
+  padding: 1rem 2.5rem 1.25rem 2.5rem;
   border: none;
   margin-top: 3.125rem;
   background-color: #5BACC3;
@@ -210,42 +212,49 @@ a {
   right: 5px;
   border: 2px solid #393939;
 }
+.view-all__button:active::before {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
 /* Styles for the special product section */
 .special-product {
   display: flex;
   justify-content: space-between;
 }
-.special-product__title {
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  margin-left: 6.25rem;
+}
+.container__title {
   margin-top: 3.75rem;
   margin-bottom: 0;
   color: #393939;
   font-size: 3.75rem;
   font-weight: 300;
 }
-.special-product__container {
-  display: flex;
-  flex-direction: column;
-  width: 33%;
-  margin-left: 6.25rem;
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-.special-product__image-container {
+.image-container {
   position: relative;
   margin-top: 3.75rem;
   margin-right: 6.25rem;
   background-image: url(../assets/coldbrewbackground.png);
   background-size: cover;
 }
-.special-product__image-container::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  bottom: 20px;
-  right: 20px;
-  border: 5px solid #5BACC3;
-}
-.special-product__image {
+.image-container__image {
   height: 17.5rem;
   width: 10rem;
   margin-top: 3.75rem;
@@ -253,20 +262,35 @@ a {
   margin-left: 6.25rem;
   margin-bottom: 3.75rem;
 }
-.special-product__logos {
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  left: -1.25rem;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  border: 0.313rem solid #5BACC3;
+}
+.image-container:hover .image-container__image {
+  animation: rotateImage 2s linear infinite;
+}
+
+.logos {
   display: flex;
   justify-content: flex-start;
 }
-.special-product__icon {
+.logos__icon {
   width: 3.125rem;
-  padding-right: 150px;
+  padding-right: 9.375rem;
 }
 
+/* Styles for the learn-more button */
 .learn-more__button {
   position: relative;
   width: 13rem;
-  padding: 1rem 2.1rem 1.25rem 2.1rem;
+  padding: 1rem 0 1.25rem 0;
   border: none;
+  text-align: center;
   margin-top: 1.875rem;
   background-color: #5BACC3;
   font-size: 1.313rem;
@@ -282,8 +306,22 @@ a {
   right: 5px;
   border: 2px solid #393939;
 }
+.learn-more__button:active::before {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
 /* Styles for the shop banner  */
+@keyframes flashColor {
+  0%, 100% {
+    background-color: #393939;
+  }
+  50% {
+    background-color: #5BACC3;
+  }
+}
 .shop-banner {
   text-align: right;
 }
@@ -296,6 +334,7 @@ a {
   font-size: 2.813rem;
   font-weight: 400;
   text-align: center;
+  animation: flashColor 2.5s infinite;
 }
 
 /* Styles for the address, hours, and social information */
@@ -311,16 +350,15 @@ a {
   position: absolute;
   width: 120px;
   opacity: 25%;
-  left: -40px;
-  top: 10px;
+  left: -2.5rem;
+  top: 0.625rem;
 }
 .footer-container__logo-right {
   position: absolute;
-  position: absolute;
-  width: 120px;
+  width: 7.5rem;
   opacity: 25%;
-  left: 1200px;
-  top: 130px;
+  left: 75rem;
+  top: 8.125rem;
 }
 
 .address__title, .hours__title, .social__title {

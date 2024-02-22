@@ -1,5 +1,7 @@
 @use '../scss/partials/global' as *;
 
+/* Variables for colors, font weight, and background colors */
+
 $color-primary: #5BACC3;
 $color-secondary: #393939;
 $color-background: #fff0ed;
@@ -12,8 +14,6 @@ $font-size-xsmall: 1.125rem;
 $border-color: #393939;
 $border-primary: 2px solid $border-color;
 $border-highlight: 5px solid $color-primary;
-
-/* This should correspond to the styles specifically for the Landing Page. */
 
 /* Styles for hyperlinks */
 
@@ -55,10 +55,11 @@ a{
     }
 
     &__button{
+        text-align: center;
         display:inline-block;
         position: relative;
         width:11.25rem;
-        padding:0.938rem 2.1rem 1.25rem 2.1rem;
+        padding:0.938rem 0 1.25rem 0;
         border: none;
         background-color:$color-primary;
         font-size: $font-size-small;
@@ -66,7 +67,6 @@ a{
         color:white;
         cursor: pointer;
     
-
         &::before{
             content:'';
             position: absolute;
@@ -76,6 +76,13 @@ a{
             right: 5px;
             border: 2px solid $color-secondary;
         }
+
+        &:active::before{
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
 
     &__image{
@@ -84,10 +91,12 @@ a{
         padding-left: 12.5rem;
     }
 }
+
 /* Styles for the product section */
 
 .product{
     display: flex;
+    padding-bottom: 3.125rem;
     flex-wrap:wrap;
     flex-direction: row;
     justify-content: space-evenly;
@@ -98,76 +107,75 @@ a{
         margin-bottom: 1.25rem;
         color:$color-secondary;
         font-size: $font-size-large;
-        font-weight: 300;
-        text-align: center;
+        font-weight:300;
+        text-align:center;
     }
+}
+.product-card{
+    display:flex;
+    flex-direction:column;
+    width:20.625rem;
+    height:27.5rem;
+    padding: 0.625rem 0.625rem 1.0.625rem 0.625rem;
+    border-radius: 1rem;
+    margin: 1.25rem 0 1.25rem 0;
+    box-shadow: 0 0.313rem 0.563rem -0.0625rem rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 
-    &__card{
-        display: flex;
-        flex-direction: column;
-        width:20.625rem;
-        height:27.5rem;
-        padding: 0.625rem 0.625rem 1.0.625rem 0.625rem;
-        border-radius: 1rem;
-        margin: 1.25rem 0 1.25rem 0;
-        box-shadow: 0 0.313rem 0.563rem -0.0625rem rgba(0, 0, 0, 0.25);
-        align-items: center;
-        justify-content: center;
-        background-color: white;
+    &__image{
+        height: 15rem;
+        padding-bottom: 2.5rem;
+        padding-top: 1.875rem;
+        flex-shrink: 0;
     }
+}   
 
-        .product-card{
-            &__image{
-                height: 15rem;
-                padding-bottom: 40px;
-                padding-top: 30px;
-                flex-shrink: 0;
-            }
-    
-            &__content{
-                display:flex;
-                flex-wrap: wrap;
-                padding-bottom: 1.25rem;
-                border-bottom-left-radius: 1rem;
-                border-bottom-right-radius: 1rem;
-                height:100%;
-                width:100%;
-                background-color: $color-background;
-                justify-content: space-between;
-                align-items: center;
-            }
-            &__info{
-                padding-left:0.938rem;
-                display:flex;
-                flex-direction: column;
-                align-content: flex-start;
-            }
-        
-            &__title{
-                padding-left:0.0625rem;
-                margin-bottom: 0;
-                font-size: $font-size-medium;
-                color:$color-secondary;
-                font-weight:200;
-            }
-        
-            &__price{
-                padding-right: 1.25rem;
-                margin-top:0;
-                margin-bottom: 0;
-                font-size: $font-size-medium;
-                color: $color-primary;
-            }
-        
-            &__size{
-                padding-left: 1px;
-                margin-top: 0px;
-                color:$color-secondary;
-                font-weight:300;
-            }
+.product-content{
+    display:flex;
+    flex-wrap: wrap;
+    padding-bottom: 1.25rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height:100%;
+    width:100%;
+    background-color: $color-background;
+    justify-content: space-between;
+    align-items: center;
+
+        &__price{
+            padding-right: 1.25rem;
+            margin-top:0;
+            margin-bottom: 0;
+            font-size: $font-size-medium;
+            color: $color-primary;
         }
 }
-/* Styles for the "View All" section */
+    
+.product-info{
+    padding-left:0.938rem;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+
+    &__title{
+        padding-left:0.0625rem;
+        margin-bottom: 0;
+        font-size: $font-size-medium;
+        color:$color-secondary;
+        font-weight:200;
+    }
+    
+    &__quantity{
+        padding-left: 1px;
+        margin-top: 0px;
+        color:$color-secondary;
+        font-weight:300;
+    }
+}
+
+/* Styles for the "View All" button */
 
 .view-all{
     padding-bottom:3.75rem;
@@ -177,8 +185,7 @@ a{
 
     &__button{
         position:relative;
-        width:11.25rem;
-        padding:1rem 2.1rem 1.25rem 2.1rem;
+        padding:1rem 2.5rem 1.25rem 2.5rem;
         border: none;
         margin-top: 3.125rem;
         background-color: $color-primary;
@@ -186,7 +193,6 @@ a{
         font-weight:400;
         color:white;
     
-
         &::before{
             content:'';
             position: absolute;
@@ -196,48 +202,54 @@ a{
             right: 5px;
             border: 2px solid $color-secondary;
         }
+
+        &:active::before{
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
     }
 }
+
 /* Styles for the special product section */
 
 .special-product{
     display:flex;
     justify-content: space-between;
+}
 
-
-    &__title{
-        margin-top: 3.75rem;
-        margin-bottom:0;
-        color:$color-secondary;
-        font-size: $font-size-large;
-        font-weight: 300;
-    }
-
-    &__container{
-        display: flex;
+.container{
+    display: flex;
         flex-direction: column;
         width:33%;
         margin-left:6.25rem;
-    }
-    &__image-container{
-        position: relative;
-        margin-top: 3.75rem;
-        margin-right:6.25rem;
-        background-image: url(../assets/coldbrewbackground.png);
-        background-size: cover;
-    
 
-        &::before{
-            content:'';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            bottom: 20px;
-            right: 20px;
-            border: 5px solid #5BACC3;
+        &__title{
+            margin-top: 3.75rem;
+            margin-bottom:0;
+            color:$color-secondary;
+            font-size: $font-size-large;
+            font-weight: 300;
         }
-    }
+}
 
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.image-container{
+    position: relative;
+    margin-top: 3.75rem;
+    margin-right:6.25rem;
+    background-image: url(../assets/coldbrewbackground.png);
+    background-size: cover;
+    
     &__image{
         height:17.5rem;
         width:10rem;
@@ -247,22 +259,40 @@ a{
         margin-bottom:3.75rem;
     }
 
-    &__logos{
-        display:flex;
-        justify-content: flex-start;
+    &::before{
+        content:'';
+        position: absolute;
+        top: -1.25rem;
+        left: -1.25rem;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        border: 0.313rem solid #5BACC3;
     }
+
+    &:hover &__image{
+        animation: rotateImage 2s linear infinite;
+    }
+}
+
+.logos{
+    display:flex;
+    justify-content: flex-start;
+
 
     &__icon{
         width:3.125rem;
-        padding-right:150px;
+        padding-right:9.375rem;
     }
 }
+
+/* Styles for the learn-more button */
 
 .learn-more__button{
     position: relative;
     width:13rem;
-    padding:1rem 2.1rem 1.25rem 2.1rem;
+    padding:1rem 0 1.25rem 0;
     border: none;
+    text-align: center;
     margin-top: 1.875rem;
     background-color: $color-primary;
     font-size:$font-size-small;
@@ -276,16 +306,31 @@ a{
         left: -5px;
         bottom: 5px;
         right: 5px;
-        border: 2px solid #393939;
+        border: 2px solid $color-secondary;
+    }
+
+    &:active::before{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
     }
 }
 
-
 /* Styles for the shop banner  */
+
+@keyframes flashColor{
+    0%, 100%{
+        background-color:$color-secondary;
+    }
+    50%{
+        background-color:$color-primary;
+    }
+}
 
 .shop-banner{
     text-align: right;
-
+    
     &__description{
         width: 90%; 
         background-color: #393939;
@@ -295,8 +340,10 @@ a{
         font-size: 2.813rem;
         font-weight: 400;
         text-align: center;
+        animation: flashColor 2.5s infinite;
     }
 }
+
 /* Styles for the address, hours, and social information */
 
 .footer-container{
@@ -305,23 +352,22 @@ a{
     padding-bottom:3.125rem;
     display:flex;
     justify-content: space-around;
-    background-color: #fff0ed;
+    background-color: $color-background;
 
     &__logo-left{
         position: absolute;
         width: 120px;
         opacity: 25%;
-        left:-40px;
-        top:10px;
+        left:-2.5rem;
+        top:0.625rem;
     }
 
     &__logo-right{
         position: absolute;
-        position: absolute;
-        width: 120px;
+        width: 7.5rem;
         opacity: 25%;
-        left:1200px;
-        top:130px;
+        left:75rem;
+        top:8.125rem;
     }
 }
 
@@ -335,7 +381,7 @@ a{
     &__info{
         font-size:1.125rem;
         font-weight: 400;
-        color: #393939;
+        color:$color-secondary;
     }
 }
 
