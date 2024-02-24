@@ -1,0 +1,393 @@
+@use '../scss/partials/global' as *;
+
+/* Variables for colors, font weight, and background colors */
+
+$color-primary: #5BACC3;
+$color-secondary: #393939;
+$color-background: #fff0ed;
+$color-text: black;
+$color-shadow: rgba(0, 0, 0, 0.25);
+$font-size-large: 3.75rem;
+$font-size-medium: 2.063rem;
+$font-size-small: 1.313rem;
+$font-size-xsmall: 1.125rem;
+$border-color: #393939;
+$border-primary: 2px solid $border-color;
+$border-highlight: 5px solid $color-primary;
+
+/* Styles for hyperlinks */
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+/* Styles for the main container section */
+
+.main-container{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    background-color:$color-background; 
+
+
+    &__item1{
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: $font-size-large;
+    }
+
+    &__title{
+        font-size: $font-size-large;
+        font-weight: 300;
+        margin-left: 8.125rem;
+        margin-bottom: 0.938rem;
+        color:$color-secondary;
+    }
+
+    &__coffee-description{
+        font-size: $font-size-xsmall;
+        font-weight: 400;
+        margin: 0 0 2.5rem 10rem;
+    }
+
+    &__button{
+        text-align: center;
+        display:inline-block;
+        position: relative;
+        width:11.25rem;
+        padding:0.938rem 0 1.25rem 0;
+        border: none;
+        background-color:$color-primary;
+        font-size: $font-size-small;
+        font-weight:400;
+        color:white;
+        cursor: pointer;
+    
+        &::before{
+            content:'';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            bottom: 5px;
+            right: 5px;
+            border: 2px solid $color-secondary;
+        }
+
+        &:active::before{
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &__image{
+        padding-top:3rem;
+        padding-bottom: 5rem;
+        padding-left: 12.5rem;
+    }
+}
+
+/* Styles for the product section */
+
+.product{
+    display: flex;
+    padding-bottom: 3.125rem;
+    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #f7f7f7;
+
+    &__title{
+        width:100%;
+        margin-bottom: 1.25rem;
+        color:$color-secondary;
+        font-size: $font-size-large;
+        font-weight:300;
+        text-align:center;
+    }
+}
+
+.product-card{
+    display:flex;
+    flex-direction:column;
+    width:20.625rem;
+    height:27.5rem;
+    padding: 0.625rem 0.625rem 1.0.625rem 0.625rem;
+    border-radius: 1rem;
+    margin: 1.25rem 0 1.25rem 0;
+    box-shadow: 0 0.313rem 0.563rem -0.0625rem rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+
+    &__image{
+        height: 15rem;
+        padding-bottom: 2.5rem;
+        padding-top: 1.875rem;
+        flex-shrink: 0;
+    }
+}   
+
+.product-content{
+    display:flex;
+    flex-wrap: wrap;
+    padding-bottom: 1.25rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    height:100%;
+    width:100%;
+    background-color: $color-background;
+    justify-content: space-between;
+    align-items: center;
+
+        &__price{
+            padding-right: 1.25rem;
+            margin-top:0;
+            margin-bottom: 0;
+            font-size: $font-size-medium;
+            color: $color-primary;
+        }
+}
+    
+.product-info{
+    padding-left:0.938rem;
+    display:flex;
+    flex-direction: column;
+    align-content: flex-start;
+
+    &__title{
+        padding-left:0.0625rem;
+        margin-bottom: 0;
+        font-size: $font-size-medium;
+        color:$color-secondary;
+        font-weight:200;
+    }
+    
+    &__quantity{
+        padding-left: 1px;
+        margin-top: 0px;
+        color:$color-secondary;
+        font-weight:300;
+    }
+}
+
+/* Styles for the "View All" button */
+
+.view-all{
+    padding-bottom:3.75rem;
+    margin-bottom:3.75rem;
+    background-color: #f7f7f7;
+    text-align: center;
+
+    &__button{
+        position:relative;
+        padding:1rem 2.5rem 1.25rem 2.5rem;
+        border: none;
+        margin-top: 3.125rem;
+        background-color: $color-primary;
+        font-size: $font-size-small;
+        font-weight:400;
+        color:white;
+    
+        &::before{
+            content:'';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            bottom: 5px;
+            right: 5px;
+            border: 2px solid $color-secondary;
+        }
+
+        &:active::before{
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+/* Styles for the special product section */
+
+.special-product{
+    display:flex;
+    justify-content: space-between;
+}
+
+.container{
+    display: flex;
+        flex-direction: column;
+        width:33%;
+        margin-left:6.25rem;
+
+        &__title{
+            margin-top: 3.75rem;
+            margin-bottom:0;
+            color:$color-secondary;
+            font-size: $font-size-large;
+            font-weight: 300;
+        }
+}
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.image-container{
+    position: relative;
+    margin-top: 3.75rem;
+    margin-right:6.25rem;
+    background-image: url(../assets/coldbrewbackground.png);
+    background-size: cover;
+    
+    &__image{
+        height:17.5rem;
+        width:10rem;
+        margin-top:3.75rem;
+        margin-right:6.25rem;
+        margin-left:6.25rem;
+        margin-bottom:3.75rem;
+    }
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: -1.25rem;
+        left: -1.25rem;
+        bottom: 1.25rem;
+        right: 1.25rem;
+        border: 0.313rem solid #5BACC3;
+    }
+
+    &:hover &__image{
+        animation: rotateImage 2s linear infinite;
+    }
+}
+
+.logos{
+    display:flex;
+    justify-content: flex-start;
+
+
+    &__icon{
+        width:3.125rem;
+        padding-right:9.375rem;
+    }
+}
+
+/* Styles for the learn-more button */
+
+.learn-more__button{
+    position: relative;
+    width:13rem;
+    padding:1rem 0 1.25rem 0;
+    border: none;
+    text-align: center;
+    margin-top: 1.875rem;
+    background-color: $color-primary;
+    font-size:$font-size-small;
+    font-weight:400;
+    color:white;
+
+    &::before{
+        content:'';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        bottom: 5px;
+        right: 5px;
+        border: 2px solid $color-secondary;
+    }
+
+    &:active::before{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+/* Styles for the shop banner  */
+
+@keyframes flashColor{
+    0%, 100%{
+        background-color:$color-secondary;
+    }
+    50%{
+        background-color:$color-primary;
+    }
+}
+
+.shop-banner{
+    text-align: right;
+    
+    &__description{
+        width: 90%; 
+        background-color: #393939;
+        padding: 1.875rem 0 1.875rem 0;
+        margin: 9.375rem auto; 
+        color: white;
+        font-size: 2.813rem;
+        font-weight: 400;
+        text-align: center;
+        animation: flashColor 2.5s infinite;
+    }
+}
+
+/* Styles for the address, hours, and social information */
+
+.footer-container{
+    position: relative;
+    padding-top:3.125rem;
+    padding-bottom:3.125rem;
+    display:flex;
+    justify-content: space-around;
+    background-color: $color-background;
+
+    &__logo-left{
+        position: absolute;
+        width: 120px;
+        opacity: 25%;
+        left:-2.5rem;
+        top:0.625rem;
+    }
+
+    &__logo-right{
+        position: absolute;
+        width: 7.5rem;
+        opacity: 25%;
+        left:75rem;
+        top:8.125rem;
+    }
+}
+
+.address, .hours, .social{
+    &__title{
+        font-size: $font-size-medium;
+        font-weight: 300;
+        color:$color-secondary;
+    }
+
+    &__info{
+        font-size:1.125rem;
+        font-weight: 400;
+        color:$color-secondary;
+    }
+}
+
+/* Styles for the social logos */
+
+.social__logo{
+    width:3.125rem;
+}
