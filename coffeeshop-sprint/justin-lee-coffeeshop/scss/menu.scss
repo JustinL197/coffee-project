@@ -35,7 +35,6 @@ a{
     justify-content: center;
     align-items: center;
 
-
     &__menu-box{
         position: relative;
         display:flex;
@@ -46,7 +45,6 @@ a{
         justify-content: center;
         align-items: center;
     
-
         &::before{
             content:'';
             position: absolute;
@@ -57,6 +55,7 @@ a{
             border: 5px solid $color-primary;
         }
     }       
+
     &__title{
         text-align: center;
         font-size: 3.75rem;
@@ -72,7 +71,6 @@ a{
 .sub-nav{
     width:100%;
     background-color: $color-secondary;
-
 
     &, &__list li{
         display:inline-block;
@@ -99,7 +97,6 @@ a{
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-
 
     &__header{
         color:$color-secondary;
